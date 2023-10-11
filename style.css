@@ -1,17 +1,25 @@
+
 header {
     text-align:center;
     font-size:64px;
 }
+h1 {
+}
 .centerText{
     text-align:center;
 }
+.vaultCode {
+    
+}
 #clock {
+
+    text-align:center;
     height:40%;
     width:60%;
     background-color:blue;
     border-style:solid;
     border-color:black;
-    border:5px;
+    border-width:5px;
 }
 #minutesLeftDisplay{
     height: 200%;
