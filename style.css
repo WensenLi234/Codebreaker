@@ -3,24 +3,24 @@ header {
     text-align:center;
     font-size:64px;
 }
-h1 {
-}
 .centerText{
     text-align:center;
+    font-size: 32px;
 }
-.vaultCode {
-    
+#vaultCode {
+    margin: auto;
 }
 #clock {
-
+    
+    margin-left:60%;
     text-align:center;
-    height:40%;
-    width:60%;
+    height:80%;
+    width:35%;
     background-color:blue;
     border-style:solid;
     border-color:black;
     border-width:5px;
 }
 #minutesLeftDisplay{
-    height: 200%;
+    
 }
