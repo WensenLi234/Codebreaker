@@ -30,7 +30,7 @@ function init() {
         console.log(buttons);
         buttons[i].addEventListener("click", function(){setDigit(i + 1)});
     }
-    clearButton.addEventListener("click", clear())
+    clearButton.addEventListener("click", clear);
     updateDisplay();
 }
 function updateDisplay() {
@@ -48,7 +48,7 @@ function shiftDigit() {
     }
 }
 function processGuess(digits) {
-    
+
 }
 function decrementMinutesLeft() {
     turnsLeft -= 1;
