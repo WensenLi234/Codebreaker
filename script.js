@@ -34,11 +34,11 @@ function newGame() {
     updateDisplay();
 }
 function randomizeCombination() {
-    correctCombination = [
-        Math.floor(Math.random() * 3 + 1),
-        Math.floor(Math.random() * 3 + 1),
-        Math.floor(Math.random() * 3 + 1)
-    ]
+    var temp = 0;
+    for(var i = 0; i < 3; i++) {
+        temp += Math.floor(Math.random() * 3 + 1) * Math.pow(10, i)
+    }
+    correctCombination = temp;
 }
 function updateDisplay() {
     let combination = ""
@@ -56,25 +56,34 @@ function shiftDigit() {
     } else {
         digitPlace = 0;
         if(processGuess(digitValues)) {
-            console.log("game won")
+            logMessage("You unlocked the vault");
         } else {
-            decrementMinutesLeft()
+            decrementMinutesLeft();
         }
-        clear()
+        clear();
     }
 }
 function processGuess(digits) {
+    let guess = 0;
     for(var i = 0; i < digits.length; i++) {
-        if(digits[i] != correctCombination[i]) {
-            return false;
-        }
+        guess += digits[i] * Math.pow(10, digits.length - i - 1);
     }
-    return true;
+    console.log(guess);
+    if(guess == correctCombination) {
+        logMessage("Guess " + guess + " was correct!");
+        return true;
+    } else if(guess >= correctCombination) {
+        logMessage("Guess " + guess + " was too high");
+        return false;
+    } else if(guess <= correctCombination) {
+        logMessage("Guess " + guess + " was too low");
+        return false;
+    }
 }
 function decrementMinutesLeft() {
     turnsLeft -= 1;
     updateDisplay();
-    logMessage("Minutes minus")
+    return turnsLeft;
 }
 function setDigit(value) {
     digitValues[digitPlace] = value
