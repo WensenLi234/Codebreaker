@@ -31,6 +31,7 @@ function newGame() {
     clear();
     randomizeCombination();
     console.log(correctCombination)
+    log.innerHTML = "";
     updateDisplay();
 }
 function randomizeCombination() {
@@ -56,9 +57,11 @@ function shiftDigit() {
     } else {
         digitPlace = 0;
         if(processGuess(digitValues)) {
-            logMessage("You unlocked the vault");
-        } else {
-            decrementMinutesLeft();
+            newGame();
+            logMessage("You unlocked the vault!");
+        } else if (decrementMinutesLeft() == 0){
+            newGame();
+            logMessage("You got caught by the police!")
         }
         clear();
     }

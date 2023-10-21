@@ -11,12 +11,15 @@ header {
     align-items:center;
     margin-left:auto;
     margin-right:auto;
+    margin-top: 10%;
     width: 615px;
     background-color:aqua;
 }
 .inputButton {
     padding-right: 5px;
+    height: 30px;
     width: 150px;
+    background-color: gray;
 }
 #vaultCode {
     width: 10%;
